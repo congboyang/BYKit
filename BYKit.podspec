@@ -1,4 +1,4 @@
-@version = "1.0.1"
+@version = "1.0.0"
 
 Pod::Spec.new do |s| 
 s.name = "BYKit" 
@@ -13,5 +13,4 @@ s.source = { :git => "https://github.com/congboyang/BYKit.git",:tag => "v#{s.ver
 s.source_files = 'BYKit/**/*.{h,m}' 
 s.requires_arc = true 
 s.framework = "Foundation","UIKit" 
-s.dependency "pop"    #所依赖的第三方库，没有就不用写
 end
