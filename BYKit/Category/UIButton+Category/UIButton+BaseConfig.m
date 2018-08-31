@@ -7,6 +7,7 @@
 //
 
 #import "UIButton+BaseConfig.h"
+#import "UIColor+CustomColor.h"
 
 @implementation UIButton (BaseConfig)
 

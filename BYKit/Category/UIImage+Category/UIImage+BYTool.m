@@ -9,6 +9,7 @@
 #import "UIImage+BYTool.h"
 #import "CellDataAdapter.h"
 #import "UIImage+SolidColor.h"
+#import "UIView+SetRect.h"
 
 @implementation UIImage (BYTool)
 
