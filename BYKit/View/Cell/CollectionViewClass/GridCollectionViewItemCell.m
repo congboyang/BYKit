@@ -9,6 +9,7 @@
 #import "GridCollectionViewItemCell.h"
 #import "UIView+AnimationProperty.h"
 #import "UIColor+CustomColor.h"
+#import <Masonry.h>
 
 @implementation GridItemModel
 

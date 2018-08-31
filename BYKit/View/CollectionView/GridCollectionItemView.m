@@ -9,7 +9,6 @@
 #import "GridCollectionItemView.h"
 #import "GridCollectionViewItemCell.h"
 #import "UIView+SetRect.h"
-#import <Masonry.h>
 
 @implementation GridCollectionItemView
 
