@@ -9,7 +9,7 @@
 #import "GridCollectionViewItemCell.h"
 #import "UIView+AnimationProperty.h"
 #import "UIColor+CustomColor.h"
-#import <Masonry.h>
+#import "UIView+SetRect.h"
 
 @implementation GridItemModel
 
@@ -48,46 +48,34 @@
     self.rightLine.backgroundColor = [UIColor colorFromHexRGB:@"E8E8E8"];
     [self.contentView addSubview:self.rightLine];
     
-    [self.rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.mas_equalTo(0);
-        make.right.equalTo(self.contentView);
-        make.height.equalTo(self.contentView);
-        make.width.mas_equalTo(0.5f);
-    }];
+    self.rightLine.top = 0;
+    self.rightLine.right = self.right;
+    self.rightLine.height = self.height;
+    self.rightLine.width = 0.5;
     
     self.downLine                 = [UIView new];
     self.downLine.backgroundColor = [UIColor colorFromHexRGB:@"F7F7F7"];
     [self.contentView addSubview:self.downLine];
     
-    [self.downLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.bottom.equalTo(self.contentView);
-        make.left.mas_equalTo(0);
-        make.height.mas_equalTo(0.5);
-        make.width.equalTo(self.contentView);
-    }];
+    self.downLine.bottom = self.bottom;
+    self.downLine.left = 0;
+    self.downLine.height = 0.5;
+    self.downLine.width = self.contentView.width;
     
     self.imageView                 = [UIImageView new];
     [self.contentView addSubview:self.imageView];
     
-    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.width.equalTo(self.contentView).multipliedBy(0.4);
-        make.height.equalTo(self.contentView).multipliedBy(0.4);
-        make.center.equalTo(self.contentView);
-    }];
+    self.imageView.width = self.contentView.width * 0.4;
+    self.imageView.height = self.contentView.height * 0.4;
+    self.imageView.center = self.contentView.center;
     
     self.titleLabel               = [UILabel new];
     self.titleLabel.font          = [UIFont fontWithName:@"KohinoorDevanagari-Light" size:10.f];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.titleLabel];
     
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10.f);
-        make.centerX.equalTo(self.contentView);
-    }];
+    self.titleLabel.bottom = self.contentView.bottom - 10;
+    self.titleLabel.centerX = self.contentView.centerX;
 }
 
 - (void)loadContent {
